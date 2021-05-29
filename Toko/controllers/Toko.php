@@ -45,7 +45,7 @@ class Toko extends CI_Controller
         $this->pagination->initialize($config);
 
 
-        $data['start'] = $_GET['urut'];
+        $data['start'] = $this->uri->segment(3);
 
         $data['produk'] = $this->db->limit($config['per_page'], $data['start'])->get('tb_produk')->result_array();
 
